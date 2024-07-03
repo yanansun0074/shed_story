@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City of Non-stop Sidewalk Sheds</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <style>
+    body {
+      margin: 0;
+      font-size: 20px;
+      font-family: "Lato", sans-serif;
+      text-rendering: optimizeLegibility;
+      font-weight: 300px;
+    }
+
+    .content {
+      max-width: 640px;
+      margin: auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-width: 0;
+    }
+
+    a {
+      color: #f05349;
+    }
+
+    .footer {
+      background: white;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 1em;
+      padding: 1em 0;
+      border-color: #666;
+      border-width: 0.5px;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-family: "Lato", sans-serif;
+      font-weight: 200px;
+      font-size: 3em;
+      line-height: 1.5;
+    }
+
+    .subhead {
+      font-family: "Lato", sans-serif;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      /* position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; */
+      
+    }
+    .scrolly-img img {
+      opacity: 0;
+      transition: opacity 1s ease;
+      object-fit: cover;
+    }
+
+    img.active {
+      opacity: 1;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    ul {
+      margin: 0;
+      padding-bottom: 1em;
+      line-height: 1.6;
+    }
+
+    iframe {
+      padding-bottom: 1.2em;
+      margin: auto;
+      width: 80%
+    }
+
+    .full-width figure {
+      text-align: center;
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      background: #ffffff;
+    }
+
+    .interacitve {
+      /* margin: auto; */
+      border-width: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+    }
+
+    /* container: title picture */
+    .container {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 720px;
+}
+
+.container img {
+  margin-top: -20%;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.byline{
+  font-size: 16px;
+}
+  </style>
+  <link href="scrolly-styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <figure>
+      <img 
+        src="head_pic.png" alt="Massive Scaffoldings on Broadway" width="100%" height="100%">
+        <div class="header">
+          <h1 class="centered">City of Non-stop Sidewalk Sheds</h1>
+          <p class="subhead"></p>
+      <figcaption>Photograph by Yanan Sun</figcaption>
+
+    </figure>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="byline">
+      <p>By <a href="https://yanansun0074.github.io/portfolio/">Yanan Sun</a></p>
+    </div>
+    <p>Chris Vidal owns a beautiful skateboard store. He names it “Upper West Skateboard” as it clearly points to where to find this place.</p>
+  </div>
+  <!-- Scrolly section 1 -->
+  <section id="scrolly-images" class="scrolly-1">
+    <div class="sticky-thing">
+      <img src="inside_store.png">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p>One of the facades in his tiny store is full of skateboards with vibrant patterns, an irresistible splash of color for anyone strolling past its glass entrance.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <div>
+          <p>Above the door, the sleek black and white logo of “UWS” resting on a skateboard easily attracted pedestrians and passing cars on Broadway.
+            <p>“People driving on the street used to stop by and visit the store”, says Vidal.</p>
+            <p><em>Picture source from Google Street View</em></p>
+        </div>
+      </div>
+      <div class="step" id="step3">
+        <div>
+          <p>But it’s no longer the case since a sprawling sidewalk shed was built in front of his store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <p>This 8-foot tall structure looms at the corner of Broadway and 106th St, enclosing the once-spacious sidewalk where Vidal’s group used to skateboard.</p>
+    <p>Worst of all, the giant shed completely blocks his store from potential customers passing by, making it harder to locate the store.</p>
+  </div>
+
+    <!-- Scrolly section 2 -->
+  <section id="scrolly-images" class="scrolly-2">
+    <div class="sticky-thing">
+      <img src="UWS_side.png">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step4">
+        <div>
+          <p>Seeing continuous drop in sales, Vidal had to put up signs of “UWS” at the front and side of the sidewalk shed from his own pocket.</p>
+        </div>
+      </div>
+      <div class="step" id="step5">
+        <p>For over a year, the shed has stood in front of Vidal’s store due to ongoing maintenance of facades, described as “loosely fit”. He was told that the expected work timeline could stretch between 18 to 24 months. </p>
+      </div>
+      <div class="step" id="step6">
+        <div>
+          <p>Vidal is not the only one facing such a prolonged obstruction.</p>
+          <p>There are more than 9,000 sidewalk sheds with currently active permits issued by DOB, with an average age longer than 500 days.</p>
+        </div>
+      </div>
+      <div class="step" id="step7">
+        <p>Among the currently active sidewalk shed permits, 38% of them are commercial district overlay, covering the faces of more than 3600 businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <p>Explore this 3D map of sidewalk sheds in NYC</p>
+  </div>
+  <div style="display: flex; justify-content: center;" frameBorder="0">
+    <iframe
+    src="Shed_store_scat_35.html"
+    width="80%"
+    height="600"
+  >Browser not compatible.</iframe>  
+  </div>
+  <div class="content">
+    <p>These persistent structures are built to support construction and protect pedestrians during the facade inspection, which is the primary cause for the shockingly high number of sidewalk sheds in New York City since 1998. In that year, Local Law 11 was issued and required street-facing facade inspection for buildings over 6 stories tall every five years. With any problems detected, the shed has to stay up until all are fixed.</p>
+    <h2>Safety Concern</h2>
+    <p>Store owners are concerned about the condition of open space left beneath sidewalk sheds, which attract homeless encampment, uncollected trash, and pile-up debris according to <a href="https://www.nyc.gov/office-of-the-mayor/news/537-23/mayor-adams-dob-commissioner-oddo-plan-remove-unsightly-sheds-scaffolding-nyc#/0">past media coverages.</a></p>
+    <p>Domenico Milano, the owner of Milano Market Westside, is relieved that the 5-year-old sidewalk shed in front of his store was finally taken down. He says that the store traffic has increased 5% since the takedown. “More people see the signs now. And there is more daylight.” </p>
+    <p>An ice-cream store called Pink Berry in Morningside Heights says that homeless people who constantly gather beneath the sidewalk sheds in front of his store, with plenty of personal belongings in the middle of the sidewalk.</p>
+
+    <figure>
+      <img
+        src="under_sheds.png">
+      <figcaption>Under sidewalk sheds, picture by Yanan Sun</figcaption>
+    </figure>
+    <p>Based on 311 complaints records from July to December 2023, zip code areas in NYC with more active sidewalk sheds receive more homeless complaints.</p>
+    <p>Pink Berry and other stores have called 311 for complaints about homeless encampments under the sheds outside several times. But they received no follow-up or reinforcement. The officers just “come out, take pictures, and you can do whatever you want,” says Kevin Phillip, the store manager of Pink Berry, “and then the homeless people always come back.” </p>
+    <p>Vidal also had to constantly deal with homeless encampments under the sidewalk shed in front of his store, to keep it a safe environment for high school visitors. “I had to ask them to leave. It’s dark in the evening and the lights are dim.” </p>
+    <p>According to a DOB report on sidewalk sheds, among the 74 sample sites across five boroughs, 82 percent did not have publicly displayed permits at the site as requested and 45 percent had unreported safety issues. Only 15 percent of them maintained a daily inspection report as requested.</p>
+    <p>Despite potential hazards to both workers and pedestrians, DOB does not conduct proactive inspections on the safety condition or require reports from construction managers.</p>
+    <h2>Is It Possible to “Get Shed Down”</h2>
+    <p>The Mayor's office published the <a href="https://www.nyc.gov/content/getstuffdone/pages/sidewalk-sheds">“Get Shed Down”</a> initiative in 2023, aiming to take down the prevalent sidewalk sheds with shorter granted work period, more strict inspection, and higher fines to expired permits. The policy prioritizes decade-long sidewalk sheds, taking a few landlords with outstanding construction duration <a href="https://www.habitatmag.com/Publication-Content/Building-Operations/2023/2023-August/DOB-Goes-to-Court-Over-Dilapidated-Decade-Old-SIdewalk-Shed">to court</a>. 
+    <p>There are many reasons for a shed to stay longer than expected, adverse weather, complicated maintenance, etc.. But the most common one is the cost of installation.</p>
+    <p>A sidewalk shed in NYC is priced per linear feet, ranging from 80 to 150 dollars. Owners usually must pay a minimum of six to ten percent of the initial fee per month as long as the shed stays, according to MohamadAhead, a scaffolding contractor of more than 500 sites in the city.</p>
+    </p>
+    <p>A 30 foot-long sidewalk shed can easily cost more than 3000 dollars for its initial installation. If it unfortunately stays for around 500 days, as many do, the cost to put up a single sidewalk shed easily adds up to 7000 dollars. It does not include permit application fees, construction fees, and other miscellaneous.</p>
+    <p>The expense also depends on location, duration, and complexity of the project. Higher-end business districts take more to put up a shed.</p>
+    <p>The “Get Shed Down” policy also targets sidewalk sheds in selected commercial districts including Midtown Manhattan, Long Island City, Downtown Brooklyn, and Grand Concourse in the Bronx.</p>
+    <p>The policy advocates less obtrusive protection, such as safety nets, instead of sidewalk sheds. However, use cases of this replacement are hardly seen in the city.</p>
+    <p>“I just don’t know why they don’t use a net.” Vidal believes that this would minimize the impact of sheds to his business. He now only hopes that the work period ends faster so that he could tear down the hideous steel cover.</p>
+  </div>
+  
+  <div class="footer">
+    <div class="content">
+      <p>Built by Yanan Sun</p>
+      <p>Template credit to <a href="https://github.com/jsoma/page-templates/">Johnathan Soma</a>.
+    </div>
+  </div>
+
+
+  <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      // const scroller = scrollama()
+      // Initialize scrollama
+      const scrolly1 = scrollama();
+      const scrolly2 = scrollama();
+
+      scrolly1
+        .setup({
+          // parent: document.querySelector("#scrolly-images"),
+          parent: document.querySelector('.scrolly-1'),
+          step: ".step",
+          offset: 0.8,
+          // debug: true,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+        // })
+
+        scrolly2
+        .setup({
+          // parent: document.querySelector("#scrolly-images"),
+          parent: document.querySelector('.scrolly-2'),
+          step: ".step",
+          offset: 0.8,
+          // debug: true,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener('resize', scrolly1.resize);
+      window.addEventListener('resize', scrolly2.resize);
+
+      // window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-1")).select("img").attr("src", "inside_store.png")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-1")).select("img").attr("src", "google_street.png")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-1")).select("img").attr("src", "now_street.png")
+    })
+
+    d3.select("#step4").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-2")).select("img").attr("src", "UWS_side.png")
+    })
+
+    d3.select("#step5").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-2")).select("img").attr("src", "1_Store.png")
+    })
+
+    d3.select("#step6").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-2")).select("img").attr("src", "2_Gray.png")
+    })
+
+    d3.select("#step7").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-2")).select("img").attr("src", "3_Orange.png")
+    })
+
+    // d3.select("#step5").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-2")).select("img").attr("src", "image1.jpg")
+    // })
+    // d3.select("#step1").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "inside_store.png")
+    // })
+
+    // d3.select("#step2").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "google_street.png")
+    // })
+
+    // d3.select("#step3").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "now_street.png")
+    // })
+
+    // d3.select("#step4").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "2_Gray.png")
+    // })
+
+    // d3.select("#step5").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "2_Gray.png")
+    // })
+
+    // d3.select("#step6").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "3_Orange.png")
+    // })
+
+    // d3.select("#step7").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "4_Orange_Gray.mp4")
+    // })
+
+    // d3.select("#step5").on('stepin', (e) => {
+    //   d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image1.jpg")
+    // })
+  </script>
+
+  <!-- <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.5,
+          // debug: true,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })();
+
+  
+
+    new ScrollyVideo({
+      scrollyVideoContainer: document.querySelector("#scrolly-video .sticky-thing"),
+      src: "HANYU_desktop.mp4",
+      full: true,
+      // cover: true
+    });
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "inside_store.png")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "google_street.png")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "now_street.png")
+    })
+
+    d3.select("#step4").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "2_Gray.png")
+    })
+
+    d3.select("#step5").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "2_Gray.png")
+    })
+
+    d3.select("#step6").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "3_Orange.png")
+    })
+
+    d3.select("#step7").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "4_Orange_Gray.mp4")
+    })
+
+    d3.select("#step5").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "image1.jpg")
+    })
+  </script> -->
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 100vh;
+    }
+  </style>
+
+</body>
+
+</html>
